@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Online ATM</title>
+  </head>
+  <body>
+    <header class="main-header margin-bottom--large">
+      <div class="welcome-message">
+        <p>Log in to get started...</p>
+      </div>
+      <div class="bank-logo">
+        <svg
+          class="logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 256"
+        >
+          <rect width="256" height="256" fill="none" />
+          <rect
+            x="24"
+            y="56"
+            width="208"
+            height="144"
+            rx="8"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="12"
+          />
+          <line
+            x1="168"
+            y1="168"
+            x2="200"
+            y2="168"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="12"
+          />
+          <line
+            x1="120"
+            y1="168"
+            x2="136"
+            y2="168"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="12"
+          />
+          <line
+            x1="24"
+            y1="96"
+            x2="232"
+            y2="96"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="12"
+          />
+        </svg>
+      </div>
+      <nav class="main-navigator">
+        <ul class="nav-links list">
+          <li><a href="#" class="link log-out-btn">Log out</a></li>
+          <li>
+            <a href="#" class="link delete-account-btn">Delete account</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="section-main section-hidden">
+      <!--____________balance____________-->
+      <div class="balance margin-bottom--medium">
+        <div>
+          <p class="balance-label">Current Balance</p>
+          <p class="balance-date">as of <span class="date">20/05/2024</span></p>
+        </div>
+        <p class="balance-value">20003 $</p>
+      </div>
+      <div class="app-container margin-bottom--large">
+        <div class="movements">
+          <!--________deposit_________-->
+          <div class="movement movement--deposit">
+            <p class="movement-label">1 deposite</p>
+            <p class="movement-value">2000$</p>
+          </div>
+          <!--________withdrawal________-->
+          <div class="movement movement--withdrawal">
+            <p class="movement-label">1 withdrawal</p>
+            <p class="movement-value">2000$</p>
+          </div>
+        </div>
+        <div class="operations">
+          <!--_____________transfer__________-->
+          <div class="transfer">
+            <h2 class="heading-secondary">Transfer Money</h2>
+            <form action="" class="transfer-form">
+              <input type="text" class="user--to" id="user--to" required />
+              <input
+                type="number"
+                class="transfer-amount"
+                id="transfer-amount"
+                required
+              />
+              <button class="btn form-btn btn--transfer">&rarr;</button>
+              <label for="user--to">Transfer to:</label>
+              <label for="transfer-amount">Amount</label>
+            </form>
+          </div>
+          <!--_____________LOAN__________-->
+          <div class="loan">
+            <h2 class="heading-secondary">Request a Loan</h2>
+            <form action="" class="loan-form">
+              <input
+                type="number"
+                class="loan-amount"
+                id="loan-amount"
+                required
+              />
+              <button class="btn form-btn btn--loan">&rarr;</button>
+              <label for="loan-amount">Amount</label>
+            </form>
+          </div>
+          <!-- ___________ notifications__________-->
+          <div class="messages">
+            <span class="messages-count count-hidden">0</span>
+            <svg
+              class="message-logo logo"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 256 256"
+            >
+              <rect width="256" height="256" fill="none" />
+              <polyline
+                points="224 56 128 144 32 56"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="12"
+              />
+              <path
+                d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="12"
+              />
+              <line
+                x1="110.55"
+                y1="128"
+                x2="34.47"
+                y2="197.74"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="12"
+              />
+              <line
+                x1="221.53"
+                y1="197.74"
+                x2="145.45"
+                y2="128"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="12"
+              />
+            </svg>
+          </div>
+        </div>
+        <!--____________summary___________-->
+        <div class="summary">
+          <div class="summary-in">
+            <p class="summary-label--in summary-label">In:</p>
+            <p class="summary-value--in summary-value">590$</p>
+          </div>
+          <div class="summary-out">
+            <p class="summary-label--out summary-label">out:</p>
+            <p class="summary-value--out summary-value">590$</p>
+          </div>
+          <div class="summary-interest">
+            <p class="summary-label--interest summary-label">interest:</p>
+            <p class="summary-value--interest summary-value">590$</p>
+          </div>
+          <button class="btn sort-btn">&darr; sort</button>
+        </div>
+      </div>
+    </main>
+    <section class="section-log-in">
+      <form action="" class="log-in-form">
+        <label for="username">username</label>
+        <label for="password">Pin</label>
+        <input
+          type="text"
+          class="username margin-bottom--medium"
+          id="username"
+          required
+        />
+        <input
+          type="password"
+          class="password margin-bottom--medium"
+          id="password"
+          required
+        />
+        <button class="btn form-btn log-in-btn">Log in</button>
+      </form>
+      <div class="money-logo">
+        <img src="undraw_credit_card_re_blml.svg" class="logo" alt="" />
+      </div>
+    </section>
+    <!--______________messages list_____________-->
+    <div class="messages-container section-hidden">
+      <div class="messages-outter"></div>
+      <div class="messages-list">
+        <div class="message">
+          <p class="message-from">name</p>
+          <p class="message-amount">200$</p>
+          <div class="message-controls">
+            <button class="btn message-accept">✅</button>
+            <button class="btn message-refuse">❌</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
