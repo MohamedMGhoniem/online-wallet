@@ -127,6 +127,16 @@ const displayMessages = function (acc) {
   });
 };
 
+const updateMessagesUI = function (currAcc, accBtn, refsBtn, i) {
+  console.log(currAcc);
+  currAcc.messages.splice(i, 1);
+  accBtn.splice(i, 1);
+  refsBtn.splice(i, 1);
+
+  messages[i].style.display = 'none';
+  messages.splice(i, 1);
+};
+
 const updateUI = function (acc) {
   welcomeMessage.textContent = `Welcome back, ${acc.username
     .split(' ')
@@ -196,7 +206,7 @@ loanBtn.addEventListener('click', function (e) {
 
 messagesBtn.addEventListener('click', function () {
   messagesSection.classList.remove('section-hidden');
-  updateUI(currentAccount);
+  displayMessages(currentAccount);
 
   const acceptBtns = [...document.querySelectorAll('.message-accept')];
   const refuseBtns = [...document.querySelectorAll('.message-refuse')];
@@ -207,8 +217,10 @@ messagesBtn.addEventListener('click', function () {
     btn.addEventListener('click', function () {
       const index = acceptBtns.indexOf(btn);
       currentAccount.movements.push(currentAccount.messages[index].amount);
+
       currentAccount.messages.splice(index, 1);
       acceptBtns.splice(index, 1);
+      refuseBtns.splice(index, 1);
 
       messages[index].style.display = 'none';
       messages.splice(index, 1);
@@ -220,13 +232,11 @@ messagesBtn.addEventListener('click', function () {
   for (const btn of refuseBtns) {
     btn.addEventListener('click', function () {
       const index = refuseBtns.indexOf(btn);
-      console.log(btn);
-      console.log(currentAccount.messages);
-      console.log(index);
       currentAccount.messages[index].from.movements.push(
         currentAccount.messages[index].amount
       );
       currentAccount.messages.splice(index, 1);
+      acceptBtns.splice(index, 1);
       refuseBtns.splice(index, 1);
 
       messages[index].style.display = 'none';

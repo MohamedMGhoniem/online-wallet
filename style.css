@@ -133,6 +133,7 @@ body {
   gap: 2.4rem;
   width: 85%;
   margin: 0 auto;
+  height: 90vh;
 }
 
 .movements {
@@ -182,6 +183,7 @@ body {
   gap: 3.2rem;
   width: 95%;
   margin: 0 auto;
+  align-self: start;
 }
 
 .transfer,
@@ -433,6 +435,7 @@ body {
   .app-container {
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 1fr 2fr;
+    height: auto;
   }
 
   .balance {
